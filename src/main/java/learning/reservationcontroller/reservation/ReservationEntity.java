@@ -1,4 +1,4 @@
-package learning.reservationcontroller;
+package learning.reservationcontroller.reservation;
 
 import jakarta.persistence.*;
 

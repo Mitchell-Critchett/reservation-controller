@@ -1,4 +1,4 @@
-package learning.reservationcontroller;
+package learning.reservationcontroller.web;
 
 import java.time.LocalDateTime;
 

@@ -1,4 +1,4 @@
-package learning.reservationcontroller;
+package learning.reservationcontroller.reservation;
 
 
 import jakarta.validation.Valid;
@@ -38,9 +38,22 @@ public class ReservationController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Reservation>> getAllReservations() {
+    public ResponseEntity<List<Reservation>> getAllReservations(
+            @RequestParam(value = "roomId", required = false) Long roomId,
+            @RequestParam(value = "userId", required = false) Long userId,
+            @RequestParam(value = "pageSize", required = false) Integer pageSize,
+            @RequestParam(value = "pageNumber", required = false) Integer pageNumber
+    ) {
         log.info("Called getAllReservations");
-        return ResponseEntity.ok(reservationService.findAllReservations());
+        var filter = new ReservationSearchFilter(
+                roomId,
+                userId,
+                pageSize,
+                pageNumber
+        );
+        return ResponseEntity.ok(reservationService.findAllByFilter(
+                filter
+        ));
     }
 
     @PostMapping

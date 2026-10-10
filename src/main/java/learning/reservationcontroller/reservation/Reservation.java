@@ -1,4 +1,4 @@
-package learning.reservationcontroller;
+package learning.reservationcontroller.reservation;
 
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotNull;

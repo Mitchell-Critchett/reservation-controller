@@ -1,4 +1,4 @@
-package learning.reservationcontroller;
+package learning.reservationcontroller.web;
 
 
 import jakarta.persistence.EntityNotFoundException;
