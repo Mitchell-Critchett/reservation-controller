@@ -15,7 +15,7 @@ public class ReservationService {
 
     private final ReservationRepository repository;
 
-    public ReservationService(ReservationRepository repository, ReservationRepository repository1) {
+    public ReservationService(ReservationRepository repository) {
         this.repository = repository;
     }
 
