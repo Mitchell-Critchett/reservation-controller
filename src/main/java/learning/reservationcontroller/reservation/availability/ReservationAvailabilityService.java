@@ -16,7 +16,7 @@ public class ReservationAvailabilityService {
 
     private static final Logger log = LoggerFactory.getLogger(ReservationAvailabilityService.class);
 
-    private ReservationRepository repository;
+    private final ReservationRepository repository;
 
     public ReservationAvailabilityService(ReservationRepository repository) {
         this.repository = repository;
