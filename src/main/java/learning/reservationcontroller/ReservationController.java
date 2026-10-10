@@ -1,6 +1,7 @@
 package learning.reservationcontroller;
 
 
+import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -44,7 +45,7 @@ public class ReservationController {
 
     @PostMapping
     public ResponseEntity<Reservation> createReservation(
-            @RequestBody Reservation reservationToCreate
+            @RequestBody @Valid Reservation reservationToCreate
     ) {
         log.info("Called createReservation");
         return ResponseEntity.status(HttpStatus.CREATED)
@@ -55,7 +56,7 @@ public class ReservationController {
     @PutMapping("/{id}")
     public ResponseEntity<Reservation> updateReservation(
             @PathVariable("id") Long id,
-            @RequestBody Reservation reservationToUpdate
+            @RequestBody @Valid Reservation reservationToUpdate
     ) {
         log.info("Called updateReservation id={} reservation={}",
                 id, reservationToUpdate);
